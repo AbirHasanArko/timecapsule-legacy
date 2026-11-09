@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import UIKit
 
 /// Full-screen capsule creation studio adhering to Apple Design and high craft standards.
 public struct CreateCapsuleView: View {

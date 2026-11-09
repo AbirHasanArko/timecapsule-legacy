@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import UIKit
 
 /// Editing view allowing updates to a sealed capsule strictly within its timed grace window.
 public struct EditCapsuleView: View {

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Single chronological timeline node with vertical connector and memory card.
 public struct TimelineItemView: View {

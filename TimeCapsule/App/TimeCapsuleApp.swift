@@ -31,6 +31,7 @@ final class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
 }
 
 @main
+@MainActor
 struct TimeCapsuleApp: App {
     #if canImport(FirebaseCore)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import UIKit
 
 /// Dedicated, serene writing studio specifically tailored for letters addressed to your future self.
 public struct FutureSelfLetterView: View {

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Central design system tokens for TimeCapsule following Apple Human Interface Guidelines
 /// and Emil Kowalski design engineering principles (restraint, tactile feedback, materials).

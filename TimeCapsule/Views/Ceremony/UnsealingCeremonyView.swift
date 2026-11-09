@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Tactile unsealing ceremony simulating the physical breaking of a wax seal or vault latch.
 public struct UnsealingCeremonyView: View {

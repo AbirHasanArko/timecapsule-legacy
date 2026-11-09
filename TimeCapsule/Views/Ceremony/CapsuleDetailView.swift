@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Detail screen presenting a locked, ready-to-open, or unsealed capsule
 /// with timed grace window controls and strict read protection.

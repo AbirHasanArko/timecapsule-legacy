@@ -69,3 +69,12 @@ jobs:
           retention-days: 14
           if-no-files-found: error
 
+      - name: Upload Build Log on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Xcodebuild-Log
+          path: build/xcodebuild.log
+          retention-days: 7
+          if-no-files-found: ignore
+
