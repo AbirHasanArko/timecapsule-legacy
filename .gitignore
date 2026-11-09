@@ -1,0 +1,17 @@
+# User source folder
+skills-main/
+
+# macOS / Xcode
+.DS_Store
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/

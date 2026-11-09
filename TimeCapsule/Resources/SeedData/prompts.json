@@ -1,0 +1,57 @@
+[
+  {
+    "id": "prompt_1",
+    "categoryId": "future_self",
+    "text": "What is one belief you hold dear today that you wonder if you will outgrow?",
+    "author": "Quiet Reflection"
+  },
+  {
+    "id": "prompt_2",
+    "categoryId": "future_self",
+    "text": "Describe the ordinary sights, sounds, and smells surrounding you right at this moment.",
+    "author": "Sensory Snapshot"
+  },
+  {
+    "id": "prompt_3",
+    "categoryId": "future_self",
+    "text": "What is something heavy you are carrying today that you hope is solved when this opens?",
+    "author": "Hopes & Release"
+  },
+  {
+    "id": "prompt_4",
+    "categoryId": "predictions",
+    "text": "Where do you think you will be living, working, and spending your mornings?",
+    "author": "Future Horizon"
+  },
+  {
+    "id": "prompt_5",
+    "categoryId": "predictions",
+    "text": "What technological breakthrough or world event do you expect will happen before this unlocks?",
+    "author": "World Watch"
+  },
+  {
+    "id": "prompt_6",
+    "categoryId": "reflections",
+    "text": "What decision took real courage recently, and how did it change your perspective?",
+    "author": "Courage Log"
+  },
+  {
+    "id": "prompt_7",
+    "categoryId": "reflections",
+    "text": "What song, album, or book currently feels like the soundtrack to your everyday life?",
+    "author": "Cultural Anchor"
+  },
+  {
+    "id": "prompt_8",
+    "categoryId": "gratitude",
+    "text": "Who is someone you are deeply grateful for right now, and what unspoken gift have they given you?",
+    "author": "Gratitude Chronicle"
+  },
+  {
+    "id": "prompt_9",
+    "categoryId": "secrets",
+    "text": "What is one truth you know about yourself that you are hesitant to admit out loud?",
+    "author": "Inner Truth"
+  }
+]
+

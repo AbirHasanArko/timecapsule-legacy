@@ -1,0 +1,38 @@
+[
+  {
+    "id": "future_self",
+    "name": "Letter to Future Self",
+    "description": "Heartfelt messages, hopes, and grounding thoughts for who you will become.",
+    "icon": "envelope.badge.shield.half.filled",
+    "colorHex": "#D97736"
+  },
+  {
+    "id": "predictions",
+    "name": "Bold Predictions",
+    "description": "Guesses about the world, technology, society, and your personal milestones.",
+    "icon": "sparkles",
+    "colorHex": "#4A6FA5"
+  },
+  {
+    "id": "reflections",
+    "name": "Life Reflections",
+    "description": "Snapshots of your current mindset, philosophy, and daily rituals.",
+    "icon": "sun.haze.fill",
+    "colorHex": "#B8860B"
+  },
+  {
+    "id": "gratitude",
+    "name": "Pockets of Gratitude",
+    "description": "Things, people, and quiet moments you never want to take for granted.",
+    "icon": "heart.fill",
+    "colorHex": "#C05646"
+  },
+  {
+    "id": "secrets",
+    "name": "Confidential Vault",
+    "description": "Private confessions and raw memories sealed under ironclad lock.",
+    "icon": "lock.shield.fill",
+    "colorHex": "#5A626A"
+  }
+]
+

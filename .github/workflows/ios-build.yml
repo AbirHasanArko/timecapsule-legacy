@@ -1,0 +1,64 @@
+name: Build iOS App (TimeCapsule)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build & Package IPA
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: |
+          echo "Available Xcode versions:"
+          ls -d /Applications/Xcode* || true
+          if [ -d "/Applications/Xcode_16.0.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.0.app
+          elif [ -d "/Applications/Xcode_15.4.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_15.4.app
+          fi
+          xcodebuild -version
+
+      - name: Build iOS Application (Unsigned)
+        run: |
+          mkdir -p build
+          xcodebuild clean build \
+            -project TimeCapsule.xcodeproj \
+            -scheme TimeCapsule \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Package Application into IPA
+        run: |
+          APP_PATH=$(find build/DerivedData -name "TimeCapsule.app" -type d | head -n 1)
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: TimeCapsule.app not found in build directory!"
+            exit 1
+          fi
+          echo "Found compiled app at: $APP_PATH"
+          
+          mkdir -p build/Payload
+          cp -r "$APP_PATH" build/Payload/
+          cd build
+          zip -r TimeCapsule.ipa Payload
+          echo "Packaged TimeCapsule.ipa successfully ($(du -h TimeCapsule.ipa | cut -f1))."
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TimeCapsule-iOS-App
+          path: build/TimeCapsule.ipa
+          retention-days: 14
+          if-no-files-found: error
