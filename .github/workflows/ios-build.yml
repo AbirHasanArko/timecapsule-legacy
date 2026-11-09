@@ -30,6 +30,7 @@ jobs:
       - name: Build iOS Application (Unsigned)
         run: |
           mkdir -p build
+          set -o pipefail
           xcodebuild clean build \
             -project TimeCapsule.xcodeproj \
             -scheme TimeCapsule \
@@ -39,7 +40,11 @@ jobs:
             CODE_SIGN_STYLE=Manual \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/xcodebuild.log || {
+              echo "=== XCODEBUILD FAILED: ERROR SUMMARY ==="
+              grep -E "(error:|fatal error:|\*\* BUILD FAILED \*\*)" build/xcodebuild.log || tail -n 60 build/xcodebuild.log
+              exit 1
+            }
 
       - name: Package Application into IPA
         run: |
