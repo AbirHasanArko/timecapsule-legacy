@@ -334,7 +334,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23B5DF2586F3457DA0F344DD /* Build configuration list for PBXProject "TimeCapsule" */;
+		23B5DF2586F3457DA0F344DD /* Build configuration list for PBXProject "TimeCapsule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9461E6E672347AF850CEDF5 /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15C8AFAE133E49D2BA9ACD55 /* Build configuration list for PBXNativeTarget "TimeCapsule" */;
+		15C8AFAE133E49D2BA9ACD55 /* Build configuration list for PBXNativeTarget "TimeCapsule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7CD969E4B7BF48958C6B1D79 /* Debug */,

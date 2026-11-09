@@ -46,9 +46,9 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO > build/xcodebuild.log 2>&1 || BUILD_STATUS=$?
           
-          echo "### Xcodebuild Log" >> $GITHUB_STEP_SUMMARY
+          echo "### Xcodebuild Log (Tail)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          cat build/xcodebuild.log >> $GITHUB_STEP_SUMMARY
+          tail -n 500 build/xcodebuild.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           
           echo "=== FULL XCODEBUILD OUTPUT ==="
