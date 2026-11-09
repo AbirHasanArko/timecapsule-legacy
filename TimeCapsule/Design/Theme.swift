@@ -73,7 +73,7 @@ public enum Theme {
         
         /// Strict monospaced numbers for timer stability
         public static let countdown = Font.system(.title3, design: .monospaced).weight(.semibold)
-        public static let countdownLarge = Font.system(.system(size: 32), design: .monospaced).weight(.bold)
+        public static let countdownLarge = Font.system(size: 32, weight: .bold, design: .monospaced)
         public static let countdownBadge = Font.system(.caption, design: .monospaced).weight(.medium)
     }
     
