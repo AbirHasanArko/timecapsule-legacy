@@ -30,7 +30,11 @@ jobs:
       - name: Build iOS Application (Unsigned)
         run: |
           mkdir -p build
-          set -o pipefail
+          echo "Listing Project Information:"
+          xcodebuild -list -project TimeCapsule.xcodeproj || true
+          
+          echo "Starting xcodebuild compilation..."
+          BUILD_STATUS=0
           xcodebuild clean build \
             -project TimeCapsule.xcodeproj \
             -scheme TimeCapsule \
@@ -40,11 +44,20 @@ jobs:
             CODE_SIGN_STYLE=Manual \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/xcodebuild.log || {
-              echo "=== XCODEBUILD FAILED: ERROR SUMMARY ==="
-              grep -E "(error:|fatal error:|\*\* BUILD FAILED \*\*)" build/xcodebuild.log || tail -n 60 build/xcodebuild.log
-              exit 1
-            }
+            CODE_SIGNING_ALLOWED=NO > build/xcodebuild.log 2>&1 || BUILD_STATUS=$?
+          
+          echo "### Xcodebuild Log" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat build/xcodebuild.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          echo "=== FULL XCODEBUILD OUTPUT ==="
+          cat build/xcodebuild.log
+          
+          if [ "$BUILD_STATUS" -ne 0 ]; then
+            echo "xcodebuild failed with exit code $BUILD_STATUS"
+            exit $BUILD_STATUS
+          fi
 
       - name: Package Application into IPA
         run: |
