@@ -200,7 +200,7 @@ public struct CapsuleDetailView: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
                 .background(Theme.Colors.terracotta.opacity(0.12))
-                .clipShape(Capsule())
+                .clipShape(SwiftUI.Capsule())
             }
         }
         .padding(12)

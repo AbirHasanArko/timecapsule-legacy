@@ -79,7 +79,7 @@ public struct CapsuleCardView: View {
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
                     .background(Theme.Colors.terracotta.opacity(0.12))
-                    .clipShape(Capsule())
+                    .clipShape(SwiftUI.Capsule())
                 }
                 
                 Spacer()

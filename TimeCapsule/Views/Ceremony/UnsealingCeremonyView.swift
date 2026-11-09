@@ -159,7 +159,7 @@ public struct UnsealingCeremonyView: View {
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
                         .background(Theme.Colors.emerald.opacity(0.12))
-                        .clipShape(Capsule())
+                        .clipShape(SwiftUI.Capsule())
                     
                     Spacer()
                     

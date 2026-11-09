@@ -180,12 +180,12 @@ public struct DashboardView: View {
                             .padding(.horizontal, 14)
                             .padding(.vertical, 7)
                             .background(
-                                Capsule()
+                                SwiftUI.Capsule()
                                     .fill(isSelected ? Theme.Colors.terracotta : Theme.Colors.adaptiveCard)
                             )
                             .foregroundColor(isSelected ? .white : .primary)
                             .overlay(
-                                Capsule()
+                                SwiftUI.Capsule()
                                     .strokeBorder(isSelected ? Color.clear : Theme.Colors.adaptiveBorder, lineWidth: 1)
                             )
                         }
@@ -315,7 +315,7 @@ public struct DashboardView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 14)
             .background(
-                Capsule()
+                SwiftUI.Capsule()
                     .fill(Theme.Colors.terracotta)
             )
             .foregroundColor(.white)

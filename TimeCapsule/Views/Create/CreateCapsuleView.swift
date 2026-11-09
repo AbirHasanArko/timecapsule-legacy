@@ -143,12 +143,12 @@ public struct CreateCapsuleView: View {
                         .padding(.horizontal, 14)
                         .padding(.vertical, 8)
                         .background(
-                            Capsule()
+                            SwiftUI.Capsule()
                                 .fill(isSelected ? category.accentColor : Theme.Colors.adaptiveCard)
                         )
                         .foregroundColor(isSelected ? .white : .primary)
                         .overlay(
-                            Capsule()
+                            SwiftUI.Capsule()
                                 .strokeBorder(isSelected ? Color.clear : Theme.Colors.adaptiveBorder, lineWidth: 1)
                         )
                     }

@@ -65,11 +65,11 @@ public struct CountdownBadgeView: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
         .background(
-            Capsule()
+            SwiftUI.Capsule()
                 .fill(badgeBackgroundColor)
         )
         .overlay(
-            Capsule()
+            SwiftUI.Capsule()
                 .strokeBorder(badgeBorderColor, lineWidth: 1)
         )
     }
